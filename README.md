@@ -116,7 +116,6 @@ All reports saved to `Reports\` folder:
 - **ComputerAccounts.log** - Active/Inactive/Orphaned AD computer accounts
 - **NeedsUpdate.txt** - Software and patches needing updates
 - **<ComputerName>.html** - Individual computer inventory reports
-- **style.css** - Stylesheet (auto-generated, customizable)
 
 ## Usage Examples
 
@@ -128,7 +127,7 @@ All reports saved to `Reports\` folder:
 .\NetworkInventory.ps1 -SkipInventory
 
 # Single computer with all data
-.\RunInv.ps1 -ComputerName SERVER01 -IncludeWin32Product -IncludeProcesses
+.\RunInv.ps1 -ComputerName SERVER01
 
 # Use credentials
 $cred = Get-Credential
@@ -149,23 +148,6 @@ $cred = Get-Credential
 - `-IncludeProcesses` - Include running processes
 - `-OutputPath` - Custom output location
 - `-Credential` - Alternate credentials
-
-## Scheduling
-
-Run daily via scheduled task:
-
-```powershell
-$action = New-ScheduledTaskAction -Execute 'PowerShell.exe' `
-    -Argument '-NoProfile -ExecutionPolicy Bypass -File "C:\Inventory\NetworkInventory.ps1"'
-
-$trigger = New-ScheduledTaskTrigger -Daily -At 2am
-
-$principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" `
-    -LogonType ServiceAccount -RunLevel Highest
-
-Register-ScheduledTask -TaskName "Network Inventory" `
-    -Action $action -Trigger $trigger -Principal $principal
-```
 
 ## Troubleshooting
 
@@ -194,4 +176,5 @@ Enable-NetFirewallRule -DisplayGroup "Windows Remote Management"
 
 See additional files:
 - **INSTALLATION.md** - Detailed setup guide
+
 - **EXAMPLES.md** - Usage examples and workflows
