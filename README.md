@@ -32,6 +32,25 @@ PowerShell replacement for VBScript SYDI-Server inventory system.
 - Active Directory module (for NetworkInventory.ps1 only)
 - WinRM/PowerShell Remoting enabled on target computers
 
+## Report Styling & Custom Logo
+
+The system automatically generates a clean, Windows-themed `style.css` file in the output directory. You can customize the report appearance by placing your own `style.css` in the script directory; the script will prioritize your custom file over the default defaults.
+
+### Adding a Company Logo
+The script supports automatic logo detection and copying. To add a logo to your reports:
+
+1. Place your logo image (e.g., `logo.png`) in the same directory as the scripts.
+2. Edit your `style.css` to reference the image using `url()`. The default CSS includes a commented-out example at the bottom:
+   ```css
+   /* LOGO CONFIGURATION */
+   body::before {
+       content: url('logo.png');
+       display: block;
+       margin-bottom: 15px;
+   }
+   ```
+3. The script scans the CSS file for the `url('filename')` pattern and automatically copies the referenced image to the report folder during execution.
+
 ## Enabling PowerShell Remoting via GPO
 
 To enable WinRM/PowerShell Remoting on all computers:
@@ -116,6 +135,7 @@ All reports saved to `Reports\` folder:
 - **ComputerAccounts.log** - Active/Inactive/Orphaned AD computer accounts
 - **NeedsUpdate.txt** - Software and patches needing updates
 - **<ComputerName>.html** - Individual computer inventory reports
+- **style.css** - Stylesheet (auto-generated, customizable)
 
 ## Usage Examples
 
@@ -176,5 +196,7 @@ Enable-NetFirewallRule -DisplayGroup "Windows Remote Management"
 
 See additional files:
 - **INSTALLATION.md** - Detailed setup guide
-
+- **EXAMPLES.md** - Usage examples and workflows
+See additional files:
+- **INSTALLATION.md** - Detailed setup guide
 - **EXAMPLES.md** - Usage examples and workflows
