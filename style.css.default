@@ -1,0 +1,87 @@
+/* Windows Default Style (Blue/Light Grey) */
+
+body { 
+    background-color: #F0F0F0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: black;
+    margin: 15px;
+}
+
+h1, h2, h3 { 
+    color: #0078D7; /* Windows Blue */
+}
+
+h1 { 
+    font-size: 16pt; 
+    border-bottom: 2px solid #0078D7; 
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+h2 { 
+    font-size: 14pt; 
+    margin-top: 15px;
+}
+
+h3 { 
+    font-size: 12pt; 
+}
+
+/* Link Styles */
+a { 
+    color: #0000EE; /* Standard Unvisited Blue */
+    text-decoration: none; 
+}
+
+a:visited { 
+    color: #551A8B; /* Standard Visited Purple */
+}
+
+a:hover { 
+    text-decoration: underline; 
+}
+
+/* Table Styles */
+table { 
+    border-collapse: collapse; 
+    width: 100%; 
+    background-color: white; 
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 2px #CCC;
+}
+
+th { 
+    color: white; 
+    background-color: #0078D7; 
+    font-weight: bold; 
+    border: 1px solid #666; 
+    text-align: left; 
+    padding: 5px; 
+}
+
+td { 
+    font-size: x-small; 
+    color: black; 
+    border: 1px solid #DDD; 
+    padding: 3px; 
+}
+
+/* Optional: Alternating row color for readability */
+tr:nth-child(even) td {
+    background-color: #FAFAFA;
+}
+
+b { 
+    color: #444; 
+}
+
+/* LOGO CONFIGURATION
+   To add a logo, uncomment the block below.
+   The script scans for "url('filename')" to automatically copy the asset.
+*/
+
+body::before {
+    content: url('logo.png');
+    display: block;
+    margin-bottom: 15px;
+}
