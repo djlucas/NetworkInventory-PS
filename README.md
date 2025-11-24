@@ -192,11 +192,3 @@ Enable-NetFirewallRule -DisplayGroup "Windows Remote Management"
 - Skip Win32_Product collection (it's slow)
 - Increase `-Timeout` for slower computers
 
-## Documentation
-
-See additional files:
-- **INSTALLATION.md** - Detailed setup guide
-- **EXAMPLES.md** - Usage examples and workflows
-See additional files:
-- **INSTALLATION.md** - Detailed setup guide
-- **EXAMPLES.md** - Usage examples and workflows
