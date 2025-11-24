@@ -81,7 +81,8 @@ b {
 */
 
 body::before {
-    content: url('logo.png');
+    content: url('logo.jpg');
     display: block;
     margin-bottom: 15px;
 }
+
